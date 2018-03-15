@@ -16,7 +16,7 @@ Data Preparation
 
 2. Randomly split each dataset into training (e.g. laptops/trn), development (e.g. laptops/dev) and testing datasets (e.g. laptops/tst). Put all datasets into a folder named 'dataset'. Thus, the directory structure looks like dataset/laptops/trn. 
 
-Preprocessing and Run the Algorithm
+Preprocessing and Run the Demo
 ======
 
 1. Run `python preprocessing.py`. This program will iterate through the 'dataset' folder and generate files like dictionaries, embeddings and transformed datasets.
