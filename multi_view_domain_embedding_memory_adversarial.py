@@ -196,7 +196,7 @@ class Config(object):
     hidden_size = 300
     lr_decay = 0.95
     valid_portion=0.1
-    dataset='1'
+    dataset=''
     batch_size=50
     keep_prob = 0.4
     #0.05
@@ -500,6 +500,3 @@ if __name__ == "__main__":
         train_test_model(config, session,\
             train_models,test_models,test_models,\
             train_datasets,valid_datasets,test_datasets, domain_classifier,domain_classifier_adversarial,combined_data)
-
-        final_domain_embedding=session.run(domain_embedding)
-        np.save('domain_embedding.npy', final_domain_embedding) 

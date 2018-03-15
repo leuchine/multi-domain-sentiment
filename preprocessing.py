@@ -73,7 +73,7 @@ for file in os.listdir(location):
 
 
 #create embedding vector matrix
-word_vectors = KeyedVectors.load_word2vec_format('../vectors.gz', binary=True)
+word_vectors = KeyedVectors.load_word2vec_format('vectors.gz', binary=True)
 word2vec=[[0]*300, [0]*300]
 for number, word in sorted(zip(common_word.values(), common_word.keys())):
 	try:
