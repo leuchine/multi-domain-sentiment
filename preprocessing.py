@@ -30,7 +30,7 @@ def convert_words_to_number(f, dataset, labels):
 vocab=10000
 gap=2
 vocab_size=vocab-2
-location='./dataset1/'
+location='./dataset/'
 all_words=[]
 
 #iterate all files
@@ -82,7 +82,7 @@ for number, word in sorted(zip(common_word.values(), common_word.keys())):
 	except KeyError: 
 		print(word+ " not found")
 		word2vec.append([0]*300)
-pickle.dump(word2vec, open('vectors2', 'wb'))
+pickle.dump(word2vec, open('vectors', 'wb'))
 print(len(word2vec))
 
 print(word_vectors.word_vec('laptop'))
