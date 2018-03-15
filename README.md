@@ -16,9 +16,12 @@ Data Preparation
 
 2. Randomly split each dataset into training (e.g. laptops/trn), development (e.g. laptops/dev) and testing datasets (e.g. laptops/tst). Put all datasets into a folder named 'dataset'. Thus, the directory structure looks like dataset/laptops/trn. 
 
-3. Run `python preprocessing.py`. This program will iterate through the 'dataset' folder and generate files like dictionaries, embeddings and transformed datasets.
+Preprocessing and Run the Algorithm
+======
 
-4. Run `python multi_view_domain_embedding_memory_adversarial.py dataset_name1 dataset_name2 ...` for running the algorithm.
+1. Run `python preprocessing.py`. This program will iterate through the 'dataset' folder and generate files like dictionaries, embeddings and transformed datasets.
+
+2. Run `python multi_view_domain_embedding_memory_adversarial.py dataset_name1 dataset_name2 ...` for running the algorithm.
 
  
 
