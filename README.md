@@ -5,7 +5,7 @@ A framework for multi-domain sentiment analysis by learning domain-specific repr
 Prerequisite
 ======
 1. Tensorflow 
-2. Google News Embeddings (https://code.google.com/archive/p/word2vec/) (rename it to 'vectors.gz')
+2. Google News Embeddings (https://code.google.com/archive/p/word2vec/) (rename it to 'vectors.gz' and put it under the main folder)
 3. Gensim
 
 Data Preparation
