@@ -148,9 +148,9 @@ class Combine_two_model:
         combine_vector=tf.concat([context_vector, combine_vector],axis=1)
 
         #softmax matrix
-        softmax_w = tf.get_variable("softmax_w", [4*config.hidden_size, 2])
+        softmax_w = tf.get_variable("softmax_w", [4*config.hidden_size, config.num_classes])
         #softmax_w = tf.get_variable("softmax_w", [2*config.hidden_size, 2])
-        softmax_b = tf.get_variable("softmax_b", [2])
+        softmax_b = tf.get_variable("softmax_b", [config.num_classes])
 
         #add dropout to combine_vector
         if is_training and config.keep_prob < 1:
@@ -197,7 +197,7 @@ class Config(object):
     lr_decay = 0.95
     valid_portion=0.1
     dataset=''
-    batch_size=50
+    batch_size=10
     keep_prob = 0.4
     #0.05
     learning_rate = 0.1
@@ -278,7 +278,9 @@ def run_domain_classifier_epoch(session, m, data, eval_op):
     total = 0
     total_cost=0
 
+    data[2] = np.array(data[2])
     for inds in minibatches[:]:
+        print(inds)
         x = data[0][:,inds]        
         mask = data[1][inds]
         y = data[2][inds]
@@ -400,6 +402,9 @@ def get_domains():
         exit(1)
     return domain_size, domain_list
 
+def count_labels(labels):
+    return len(set(labels))
+
 if __name__ == "__main__":
     #configs
     config = Config()
@@ -422,7 +427,7 @@ if __name__ == "__main__":
         train_datasets[index]=train
         valid_datasets[index]=valid
         test_datasets[index]=test
-  
+    config.num_classes = count_labels(train_datasets[0][2])
     combined_data=combine(train_datasets)   
 
     gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.9)
