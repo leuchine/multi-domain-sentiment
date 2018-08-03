@@ -92,7 +92,7 @@ class Combine_two_model:
 class Config(object):
     vocab_size=10000  # Vocabulary size
     maxlen=100  # Sequence longer then this get ignored
-    num_steps = 100
+    num_steps = maxlen
     batch_size=10  # The batch size during training.
 
     init_scale = 0.05
