@@ -190,7 +190,7 @@ class Combine_two_model:
 class Config(object):
     vocab_size=10000
     maxlen=100 
-    num_steps = 100
+    num_steps = maxlen
     max_grad_norm = 5
     init_scale = 0.05
     hidden_size = 300
