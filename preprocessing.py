@@ -40,8 +40,6 @@ for file in os.listdir(location):
 			insert_word(f)
 		with open(location+file+"/dev") as f:
 			insert_word(f)
-		with open(location+file+"/tst") as f:
-			insert_word(f)
 
 #take out frequent words 
 counter=collections.Counter(all_words)
@@ -67,8 +65,7 @@ for file in os.listdir(location):
 
 		with open(location+file+"/dev") as f:
 			convert_words_to_number(f, train, train_label)
-		with open(location+file+"/tst") as f:
-			convert_words_to_number(f, test, test_label)
+
 		pickle.dump(((train,train_label) ,(test,test_label)), open(location+file+'/dataset', 'wb'))
 
 
